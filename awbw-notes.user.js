@@ -11,6 +11,7 @@
 
 (function() {
     'use strict';
+
     const key = "notes_" + gameId;
     var text = localStorage.getItem(key) || "";
 
@@ -18,11 +19,16 @@
     textBox.setAttribute("class", "playerNotes");
     textBox.value = text;
 
-    var playerInfoArea = document.querySelector(".game-player-info");
-    playerInfoArea.appendChild(textBox);
+    document.querySelector(".game-player-info").appendChild(textBox);
 
     textBox.addEventListener("change", function(event) {
         localStorage.setItem(key, textBox.value);
     });
 
+    GM_addStyle(`
+        .playerNotes {
+            width: 90%
+        }
+    `
+    )
 })();
