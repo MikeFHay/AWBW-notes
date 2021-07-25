@@ -11,28 +11,32 @@
 
 (function() {
     'use strict';
-
     const key = "notes_" + gameId;
     var text = localStorage.getItem(key) || "";
 
     var textBox = document.createElement("textarea");
     textBox.setAttribute("class", "playerNotes");
+    textBox.setAttribute("style", "width:200px;height:100px;");
     textBox.value = text;
 
-    document.querySelector(".game-player-info").appendChild(textBox);
+    var divBox = document.createElement("div");
+    divBox.setAttribute("id", "playerNotesArea");
+    divBox.setAttribute("style", "position:fixed;bottom:0px;right:0px;");
+    divBox.appendChild(textBox)
+
+    var mapControls = document.querySelector("#map-controls-container");
+    insertAfter(divBox, mapControls);
 
     textBox.addEventListener("change", function(event) {
         localStorage.setItem(key, textBox.value);
     });
-
+    
     textBox.addEventListener("keydown", function(event) {
         event.stopPropagation();
     });
 
-    GM_addStyle(`
-        .playerNotes {
-            width: 90%
-        }
-    `
-    )
 })();
+
+function insertAfter(newNode, referenceNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
