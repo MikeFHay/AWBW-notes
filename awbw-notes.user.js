@@ -25,6 +25,10 @@
         localStorage.setItem(key, textBox.value);
     });
 
+    textBox.addEventListener("keydown", function(event) {
+        event.stopPropagation();
+    });
+
     GM_addStyle(`
         .playerNotes {
             width: 90%
