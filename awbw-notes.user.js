@@ -60,15 +60,12 @@
      });
 
     GM_addStyle(`
-        .playerNotes {
-            width: 90%
-        }
-
         #playerNotesArea {
            position:fixed;
            bottom: 0px;
            right: 0px;
            border: 1px solid black;
+           background-color: white;
         }
 
         #notesClose {
