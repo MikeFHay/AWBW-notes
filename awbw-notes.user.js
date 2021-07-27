@@ -19,11 +19,14 @@
     'use strict';
     const key = "notes_" + gameId;
     var text = localStorage.getItem(key) || "";
+    
+    var initialWidth = localStorage.getItem("notes_size_w") || 200;
+    var initialHeight = localStorage.getItem("notes_size_h") || 100;
 
     var textBox = document.createElement("textarea");
     textBox.setAttribute("id", "notesTextArea");
     textBox.setAttribute("class", "notesClosable");
-    textBox.setAttribute("style", "position:inline;width:200px;height:100px;");
+    textBox.setAttribute("style", "position:inline;width:" + initialWidth + "px;height:" + initialHeight + "px;");
     textBox.value = text;
 
     var closeButton = document.createElement("div");
@@ -48,7 +51,11 @@
     });
 
     $("#notesTextArea").resizable({
-        handles: "nw"
+        handles: "nw",
+        stop: function(event, ui) {
+            localStorage.setItem("notes_size_w", ui.size.width);
+            localStorage.setItem("notes_size_h", ui.size.height);
+        }
     });
     $("#notesTextArea").parent().addClass("notesClosable"); //Make the 'parent' resizing div disappear on click too.
     $("#notesTextArea").parent()[0].style.position = null; //HACK: Move the resizable() handle to the top-left, ignoring header.
