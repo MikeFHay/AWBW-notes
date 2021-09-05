@@ -20,7 +20,7 @@
     'use strict';
     const key = "notes_" + gameId;
     var text = localStorage.getItem(key) || "";
-    
+
     var initialWidth = localStorage.getItem("notes_size_w") || 200;
     var initialHeight = localStorage.getItem("notes_size_h") || 100;
 
@@ -86,7 +86,7 @@
            right: 0px;
            border: 1px solid black;
            background-color: white;
-           z-index: 99;
+           z-index: 800;
         }
 
         #notesClose {
@@ -104,7 +104,7 @@
         .notesClosable {
             display: block;
         }
-        
+
         .notesAbs {
             position: absolute;
             top: -5px;
