@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AWBW Notepad
 // @namespace    https://github.com/MikeFHay/
-// @version      0.5
+// @version      0.6
 // @description  Adds per-game notes to Advance Wars By Web
 // @author       https://github.com/MikeFHay
 // @match        https://awbw.amarriner.com/2030.php?games_id=*
