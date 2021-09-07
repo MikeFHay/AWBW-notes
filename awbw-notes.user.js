@@ -1,17 +1,21 @@
 // ==UserScript==
 // @name         AWBW Notepad
 // @namespace    https://github.com/MikeFHay/
-// @version      0.7
+// @version      0.8
 // @description  Adds per-game notes to Advance Wars By Web
 // @author       https://github.com/MikeFHay
 // @match        https://awbw.amarriner.com/2030.php?games_id=*
-// @match        https://awbw.amarriner.com/moveplanner.php?games_id=*
+// @match        https://awbw.amarriner.com/moveplanner.php?*
 // @icon         https://www.google.com/s2/favicons?domain=tampermonkey.net
 // @require      https://code.jquery.com/ui/1.12.1/jquery-ui.min.js
 // @grant        GM_addStyle
 // ==/UserScript==
 
 (function() {
+    if(!gameId) {
+        return;
+    }
+
     $("head").append (
         '<link href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" '
       + 'rel="stylesheet" type="text/css">'
