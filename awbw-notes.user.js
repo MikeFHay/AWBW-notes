@@ -4,6 +4,7 @@
 // @version      0.8
 // @description  Adds per-game notes to Advance Wars By Web
 // @author       https://github.com/MikeFHay
+// @match        https://awbw.amarriner.com/game.php?games_id=*
 // @match        https://awbw.amarriner.com/2030.php?games_id=*
 // @match        https://awbw.amarriner.com/moveplanner.php?*
 // @icon         https://www.google.com/s2/favicons?domain=tampermonkey.net
