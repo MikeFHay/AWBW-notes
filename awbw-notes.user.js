@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AWBW Notepad
 // @namespace    https://github.com/MikeFHay/
-// @version      0.8
+// @version      0.9
 // @description  Adds per-game notes to Advance Wars By Web
 // @author       https://github.com/MikeFHay
 // @match        https://awbw.amarriner.com/game.php?games_id=*
@@ -35,7 +35,7 @@
     textBox.setAttribute("style", "position:inline;width:" + initialWidth + "px;height:" + initialHeight + "px;");
     textBox.value = text;
 
-    var closeButton = document.createElement("div");
+    var closeButton = document.createElement("button");
     closeButton.innerHTML = "&#9660;"
     closeButton.setAttribute("id", "notesClose");
 
@@ -88,7 +88,7 @@
         #playerNotesArea {
            position: fixed;
            bottom: 0px;
-           right: 0px;
+           right: 2px;
            border: 1px solid black;
            background-color: white;
            z-index: 800;
@@ -108,6 +108,10 @@
 
         .notesClosable {
             display: block;
+        }
+
+        .ui-wrapper {
+            padding-top: 0px !important;
         }
 
         .notesAbs {
